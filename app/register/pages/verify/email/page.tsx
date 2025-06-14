@@ -2,10 +2,12 @@
 
 import { useSearchParams } from 'next/navigation';
 import React, { useEffect, useState, Suspense } from 'react';
+import { useRouter } from "next/navigation";
 import { account } from '@/appwrite';
 import Back from '@/components/Back';
 
 const RegisterPage: React.FC = () => {
+    const router = useRouter();
     const [email, setEmail] = useState<string | null>(null);
     const [isVerified, setIsVerified] = useState<boolean>(false);
     const searchParams = useSearchParams();
@@ -43,6 +45,10 @@ const RegisterPage: React.FC = () => {
         }
     };    
 
+    const handleLoginRedirect = () => {
+        router.push('/register/pages/verify/email/success');
+    };
+
     return (
         <div className="flex flex-col items-center justify-center min-h-screen relative bg-[#eff6ff]">
             <Back />
@@ -55,7 +61,7 @@ const RegisterPage: React.FC = () => {
                             Click the button below to verify <strong>{email}</strong>
                         </p>
                         <button
-                            onClick={handleVerify}
+                            onClick={handleLoginRedirect}
                             disabled={isVerified}
                             className={`w-full py-3 px-6 text-white font-semibold rounded-lg transition-colors duration-300 ${
                                 isVerified
