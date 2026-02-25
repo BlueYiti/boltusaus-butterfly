@@ -96,7 +96,7 @@ To get started with the Butterfly project, follow these steps:
 
 ## Project Status
 
-Development on this project is **ACTIVE and ONGOING**. The team is currently implementing new features, testing functionalities, and refining user interfaces.
+Development on this project is **DONE**. All planned features have been implemented, functionalities have been tested, and the user interfaces have been finalized.
 
 ## Learn More
 
